@@ -136,29 +136,129 @@
           <hr>
         </div>
 	</section>
-      <section id="week2">
-        <h3>WEEK1:</h3>
-        <div class="block" id="">
-          <h4></h4>
-          <ul>
-            <li></li>
-          </ul>
-          <hr>
-        </div>
-      </section>
 
+  <section id="week2">
+    <h3>WEEK2:</h3>
+    <div class="block" id="">
+      <h4></h4>
+      <ul>
+        <li></li>
+      </ul>
+      <hr>
+    </div>
+  </section>
 
+  <section id="week4">
+    <h3>WEEK4: Scheduling</h3>
 
-    <footer>
+    <div class="block" id="dining_philo">
+      <h4>Dining philosophers</h4>
+      <ul>
+        <li>A philosopher needs two forks to eat (one in his left, one in his
+           right), there aren't enough forks for them to eat simultaneously</li>
+        <li>Key to solve the problem is to deal with the limited forks, the forks
+           are shared resources and we can apply semaphore here.</li>
+        <li><img src="imgs/week5/d_ph_1.png" alt="philosopher function" style="width:100%;height:100%;"></li>
+        <li><img src="imgs/week5/d_ph_2.png" alt="philosopher function" style="width:100%;height:100%;"></li>
+        <li><img src="imgs/week5/d_ph_3.png" alt="philosopher function" style="width:100%;height:100%;"></li>
+        <li>Firstly we should transfer this practical problem to an operating system related problem.
+        Here philosphers are processes, forks are shared resources. Each philosopher could have
+        different <strong>states</strong> indicates:
+          <ol>
+            <li><strong>EATING:</strong> Use number 2, the philsopher is eating using both folks</li>
+            <li><strong>HUNGRY:</strong> Use number 1, the philosopher wants to eat but there isn't enough forks available</li>
+            <li><strong>THINKING:</strong> Use number 0, the philosopher doesn't want to eat.</li>
+          </ol>
+        <li>We want to give a mutual exclusion when philosopher want to take or put the forks, thus there is one semaphore for each philosopher </li>
+        <li>The algorithm works like this: run philosopher => try to <code>take_fork()</code>, set state to HUNGRY => use <code>test()</code> to check the availability of forks => if not availale be blocked at <code>down(&s[i])</code> / if available, set state to EATING, <code>up(&s[i])</code> would unblock the process if previously blocked by <code>down(&s[i]</code>).</li> 
+        <li> After <code>eat()</code>, we want to <code>put_forks()</code>, which change the state back to THINKING and <strong>try to activiate the neighbour who is previously being blocked because the forks are unavailable.</strong></li>
+      </ul>
+      <hr>
+    </div>
+
+    <div class="block" id="sheduling">
+      <h4>Scheduling</h4>
+      <ul>
+        <li></li>
+      </ul>
+      <hr>
+    </div>
+
+    <div class="block" id="dining_philo">
+      <h4></h4>
+      <ul>
+        <li></li>
+      </ul>
+      <hr>
+    </div>
+
+    <div class="block" id="dining_philo">
+      <h4></h4>
+      <ul>
+        <li></li>
+      </ul>
+      <hr>
+    </div>
+  </section>
+
+  <section id="week5">
+    <h3>WEEK5: Memory management</h3>
+
+    <div class="block" id="memory">
+      <h4>Memory management</h4>
+      <ul>
+        <li></li>
+      </ul>
+      <hr>
+    </div>
+
+    <div class="block" id="">
+      <h4></h4>
+      <ul>
+        <li></li>
+      </ul>
+      <hr>
+    </div>
+
+    <div class="block" id="">
+      <h4></h4>
+      <ul>
+        <li></li>
+      </ul>
+      <hr>
+    </div>
+
+    <div class="block" id="">
+      <h4></h4>
+      <ul>
+        <li></li>
+      </ul>
+      <hr>
+    </div>
+
+  </section>
+
+  <section id="Assignment 1">
+    <h3>Assignment 1</h3>
+    <div class="block" id="">
+      <h4></h4>
+      <ul>
+        <li></li>
+      </ul>
+      <hr>
+    </div>
+  </section>
+
+  <footer>
+    <section class="block">
       <h4>footer</h4>
-      <section>
       <p>Posted by: YUE LI (RIO)</p>
       <p>Some notes are from my friend Ryan Yan</p>
       <p>Contact information: <a href="mailto:lhzuigao@hotmail.com">
         lhzuigao@hotmail.com</a></p>
       <p>©2016 YUE LI ALL RIGHTS RESERVED</p>
-      </section>
-    </footer>
+    </section>
+  </footer>
 
 
 

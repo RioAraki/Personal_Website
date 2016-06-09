@@ -247,7 +247,6 @@
       					<li>Used to need to write whole bunch of rules for different browsers, now just use the standard version</li>
       					<li>viewport
       					<p>visible area of the website through browser window, varies according to screen and devices, relate to responsive design</p></li>
-      					<li></li>
       				</ul>
               <hr>
             </div>
@@ -273,28 +272,77 @@
       <div class="block" id="jQuery">
         <h4>jQuery</h4>
         <ul>
-          <li>jQuery => interact with DOM => access and modify HTML using CSS-style
+          <li>jQuery is based on JS and is still JS, it optimize to perform many common scripting functions using fewer lines of code=> interact with DOM => access and modify HTML using CSS-style
              selectors. Normally it would start with <code>$(document).ready(function(){});</code>
-             (load the function when document is ready?)</li>
+             (load the function when DOM is ready), another choice is <code>$(window).load(function(){});</code> (load event when DOM and all contents on the page(img, css, etc.) is fully loaded), $(document).ready might be master</li>
           <li>Minified, un-minified; Minification => process that scripts out non-essential
              char from scripts, CSS, etc. make size smaller. Functionality not affected.
               Always keep a non-minified version</li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>jQuery function
+            <ul>
+                <li>getters: read the section, operate on first element in a section</li>
+                <li>setters: change the section, operate on all elements in a section</li>
+            </ul>
+          </li>
+          <li>$ is a shortcut for jQuery</li>
+          <li>There are a lot of events in jQuery, each corresponds to JavaScript</li>
+          <li>Use event handler .on() to interact with items that didn't exist when the DOM was loaded.</li>
+          <li>Event delegation => bind fewer event handlers than we'd have to if we were listening to clicks on individual elements</li>
+          <li>Recommanded: <a href="https://www.youtube.com/playlist?list=PL6n9fhu94yhVDV697uvHpavA3K_eWGQap">online tutorial</a> about jQuery. This tutorial is very slow-paced but really go into details </li>
         </ul>
         <hr>
       </div>
+
+      <div class="block" id="nodejs">
+        <h4>NODE.JS</h4>
+        <ul>
+            <li>an event-driven, I/O model-based runtime enviroment and library for developing server-side web apps using JS. NODE.JS => real-time and fast</li>
+            <li>Modules => building block of Node.js and can be included by requiring in the main file. No need to include the .js file extension.</li>
+            <li>If you want another part of the web app to access variables and functions in a module, you have to expose these with exports.<br><code>hello = function() {return “Hello world!”;}<br>exports.hello= hell;</code></li>
+            <li>Recommanded tutorial: <a href="http://nodeschool.io">http://nodeschool.io</a></li>
+            <li>Recommanded: <a href="https://www.youtube.com/playlist?list=PL6gx4Cwl9DGBMdkKFn3HasZnnAqVjzHn_">online tutorial</a> about NODE.JS</li>
+        </ul>
+        <hr>
+    </div>
+
+    <div class="block" id="AJAX">
+        <h4>AJAX</h4>
+        <ul>
+            <li>AJAX: Asynchronous JavaScript and XML, not a programming language, rather a way of using JS to download data from a server in the background. <strong>AJAX is a way of sending information between browser and server without refreshing page.</strong> It can be done with or without library like jQuery.</li>
+        </ul>
+        <h4>XML</h4>
+        <ul>
+            <li>XML: eXtensible Markup Language, is a generic, platform-independent,“meta” format for encoding semantic, human-readable, self-describing documents.</li>
+            <li>data used on web in many ways: web servers/ databases/ web services</li>
+        </ul>
+        <h4>JSON(JavaScript Object Notation)</h4>
+            <ul>
+            <li>language-independent convention for formatting data as a set of JS obejcts</li>
+            <li>eg: <code><pre>{"employees":[
+    {"firstName":"John", "lastName":"Doe"},
+    {"firstName":"Anna", "lastName":"Smith"},
+    {"firstName":"Peter", "lastName":"Jones"}
+]}</pre></code></li>
+            <li>Compare JSON to XML:
+                <ul>
+                    <li>Both supported by $.ajax()</li>
+                    <li>JSON faster and simpler</li>
+                    <li>$.each() to iterate over XML object but can use for loop(faster) for JSON data</li>
+                    <li>XML => semantic, both human and machine readable, but more code to parse and use XML</li>
+                    <li>should know both if you are using a web service</li>
+                </ul></li>
+            </ul>
+    </div>
+
     </section>
 
     <footer>
-      <h4>footer</h4>
       <section>
-      <p>Posted by: YUE LI (RIO)</p>
-      <p>Some notes are from my friend Ryan Yan</p>
-      <p>Contact information: <a href="mailto:lhzuigao@hotmail.com">
-        lhzuigao@hotmail.com</a></p>
-      <p>©2016 YUE LI ALL RIGHTS RESERVED</p>
+        <p>Posted by: YUE LI (RIO)</p>
+        <p>Some notes are from my friend Ryan Yan</p>
+        <p>Contact information: <a href="mailto:lhzuigao@hotmail.com">
+          lhzuigao@hotmail.com</a></p>
+        <p>©2016 YUE LI ALL RIGHTS RESERVED</p>
       </section>
     </footer>
 

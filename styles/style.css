@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Sans-serif;
+  background: white;
+  color: #3b3a36;
+}
+
+h1 {
+  margin: 0;
+  font-size: 250%;
+  padding: 10px 10px 0px 10px;
+}
+
+p, .block {
+  margin: 0;
+}
+
+section {
+  margin: 30px;
+  border: 3px solid black;
+  padding:30px;
+  background: #FFFAFA;
+}
+
+header {
+  background:#5a5c51;
+  color: white;
+}
+
+
+nav ul {
+	list-style: none; /*style of the bullet point*/
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+}
+
+/*parent <li>'s property to relative*/
+
+nav ul li {
+	display: block;
+	position: relative;
+	float: left;
+	background: #5a5c51;
+	color: white;
+}
+
+ul p {
+	padding-left: 20px;
+}
+/*hide the list*/
+
+nav li ul {display: none;} /*use li ui to specify the content*/
+
+nav ul li a {
+	display: block;
+	padding: 1em;
+	text-decoration: none;
+	white-space: nowrap;
+	color: white;
+}
+
+nav ul li a:hover {
+	background: white;
+	color:black
+}
+
+/*displays the dropdown menu on hover*/
+
+nav li:hover > ul {
+	display: block;
+	position: absolute; /*take position, will not overlop*/
+} /*> means direct child, there could be decendant that is not decendent*/
+
+nav li:hover li {float: none;}
+nav li hover a {background: #1bc2a2;}
+nav li:hover li a:hover { background: white; }
+.main-navigation li ul li { border-top: 0; }
+
+section ul li {
+  list-style: none;
+  padding-top:3px;
+  padding-bottom:3px;
+}
+
+section ul li ul li {
+  list-style: circle;
+  padding-top:1px;
+  padding-bottom:1px;
+}
+
+/*Responsive media-queries*/
+/*default case: laptop 1280px*/
+.mobile-word{display: none;}
+
+/*for screen <1024px tablet horizontal, largest margin/border/padding, etc.*/
+@media screen and (max-width: 1024px) {
+  .mobile-word {display: none;}
+  .desktop-word { display: block;}
+  body {
+    font-size: 22px;
+  }
+
+  section {
+    margin: 20px;
+    border: 3px solid black;
+    padding:20px;
+    background: #FFFAFA;
+  }
+}
+
+/*for screen <768px tablet, horizontal, margin, border, padding smaller*/
+@media screen and (max-width: 768px) {
+  .mobile-word {display: none;}
+  .desktop-word { display: block;}
+  body {
+    font-size: 20px;
+  }
+
+  section {
+    margin: 15px;
+    border: 3px solid black;
+    padding:15px;
+    background: #FFFAFA;
+  }
+}
+
+/*for screen < 480px horizontal phone, horizontal, margin, border, padding smaller*/
+@media screen and (max-width: 480px) {
+  .mobile-word {display: block;}
+  .desktop-word { display: none;}
+
+  body {
+    font-size: 18px;
+  }
+
+  section {
+    margin: 10px;
+    border: 3px solid black;
+    padding:10px;
+    background: #FFFAFA;
+  }
+}
+
+/*for screen < 320px horizontal phone, horizontal, margin, padding smaller, delete the border*/
+@media screen and (max-width: 320px) {
+  .mobile-word {display: block;}
+  .desktop-word { display: none;}
+
+  body {
+    font-size: 18px;
+  }
+
+  section {
+    margin: 5px;
+    border: 0px;
+    padding:5px;
+    background: #FFFAFA;
+  }
+}
