@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<!--TODO: photo credit-->
+<head>
+  <meta charset="utf-8">
+  <title>YUE LI's personal website</title>
+  <meta name="author" content="YUE LI">
+  <meta name="description" content="YUE Li's personal website">
+  <meta name="Copyright" content="YUE LI">
+  <link rel="stylesheet" href="styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--TODO: add my personal icon-->
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1><span class="mobile-word">Notes for CSC309</span><span class="desktop-word">Yue's notes for CSC309: Web Programming</span></h1>
+		<ul>
+			<li><a href="http://www.lhzuigao.com">Home</a></li>
+			<li><a href="#">By Time</a>
+				<ul> <!--use different text on different device-->
+          <!--only first two weeks' links work, more would be added later-->
+					<li><a href="#week1"><span class="mobile-word">Week1</span>
+            <span class="desktop-word">Week1: WEB BASIC, HTML, CSS and GITHUB</span></a></li>
+					<li><a href="#week2"><span class="mobile-word">Week2</span>
+            <span class="desktop-word">Week2: HTML5/CSS3, DOM, PAGE LAYOUT</span></a></li>
+					<li><a href="#week3"><span class="mobile-word">Week3</span>
+            <span class="desktop-word">Week3: web basic, html and css</span></a></li>
+					<li><a href="#week4"><span class="mobile-word">Week4</span>
+            <span class="desktop-word">Week4: web basic, html and css</span></a></li>
+					<li><a href="#week5"><span class="mobile-word">Week5</span>
+            <span class="desktop-word">Week5: web basic, html and css</span></a></li>
+					<li><a href="#week6"><span class="mobile-word">Week6</span>
+            <span class="desktop-word">Week6: web basic, html and css</span></a></li>
+					<li><a href="#week7"><span class="mobile-word">Week7</span>
+            <span class="desktop-word">Week7: web basic, html and css</span></a></li>
+					<li><a href="#week8"><span class="mobile-word">Week8</span>
+            <span class="desktop-word">Week8: web basic, html and css</span></a></li>
+					<li><a href="#week9"><span class="mobile-word">Week9</span>
+            <span class="desktop-word">Week9: web basic, html and css</span></a></li>
+					<li><a href="#week10"><span class="mobile-word">Week10</span>
+            <span class="desktop-word">Week10: web basic, html and css</span></a></li>
+					<li><a href="#week11"><span class="mobile-word">Week11</span>
+            <span class="desktop-word">Week11: web basic, html and css</span></a></li>
+					<li><a href="#week12"><span class="mobile-word">Week12</span>
+            <span class="desktop-word">Week12: web basic, html and css</span></a></li>
+				</ul>
+			</li>
+			<li><a href="#">By Topic</a>
+				<ul>
+					<li><a href="#WEB_BASICS">WEB BASICS</a></li>
+					<li><a href="#HTML_BASICS">HTML BASICS</a></li>
+					<li><a href="#CSS_BASICS">CSS BASICS</a></li>
+					<li><a href="#GITHUB_BASICS">GitHub</a></li>
+				</ul>
+			</li>
+    </ul>
+    </nav>
+  </header>
+
+  <section id="introduction">
+      <h3>Introduction</h3>
+      <p>
+        This is a third-year computer science course in U of T providing an
+        introduction to the tech used for developing webpages and applications.
+        You would get in touch with the following techniques during the course:
+        HTML5, CSS3, GitHub, Resonpisve design, ...
+      </p>
+  </section>
+
+  <section>
+      <div id="week1">
+        <h3>WEEK1: WEB BASICS, HTML, CSS, GITHUB</h3>
+        <div class="block" id="WEB_BASICS">
+          <h4>WEB BASICS</h4>
+          <ul>
+            <li>IP/IP address/TCP/UDP/3-way handshake</li>
+            <li>DNS/URL/HTTP/ HTTP status code(200, 301-303, 403, 404, 500)</li>
+            <li>MIME type</li>
+          </ul>
+          <hr>
+        </div>
+
+        <div class="block" id=HTML_BASICS>
+          <h4>HTML BASICS</h4>
+            <ul>
+              <li>only about cntent and structure</li>
+              <li>work with tags</li>
+              <li>HTML5 standard for this course</li>
+              <li>write in a semantic way</li>
+            </ul>
+
+            <h5>Concepts</h5>
+            <ul>
+              <li>block element/ inline element (p,h/em)</li>
+              <li>element's attribute <code> &lt;title="About W3Schools"&gt;&lt;/p&gt;</code> </li>
+              <li>HTML5 standard for this course</li>
+              <li>write in a semantic way</li>
+              <li>use <a href="https://validator.w3.org/">W3C validator</a>
+                to check if your HTML code meets the offical specs</li>
+            </ul>
+
+            <h5>HTML tags</h5>
+            <ul>
+              <li><code>&lt;head&gt;</code></li>
+              <li><code>&lt;title&gt;</code></li>
+              <li><code>&lt;body&gt;</code></li>
+              <li><code>&lt;img (src,alt)&gt;</code></li>
+              <li><code>&lt;p&gt;</code></li>
+              <li><code>&lt;h# (#=1,2,3,4,5,6)&gt;</code></li>
+              <li><code>&lt;a(href)&gt;</code></li>
+              <li><code>&lt;em(better than &lt;i&gt;)&gt;</code></li>
+              <li><code>&lt;strong(better than &lt;b&gt;)&gt;</code></li>
+              <li><code>&lt;br&gt;</code></li>
+              <li><code>&lt;hr&gt;</code></li>
+              <li><code>&lt;ul&gt;</code></li>
+              <li><code>&lt;ol&gt;</code></li>
+              <li><code>&lt;li&gt;</code></li>
+              <li><code>&lt;di&gt;</code></li>
+              <li><code>&lt;dt&gt;</code></li>
+              <li><code>&lt;dd&gt;</code></li>
+              <li><code>&lt;table (not semantic)&gt;</code></li>
+              <li><code>&lt;caption&gt;</code></li>
+              <li><code>&lt;tr&gt;</code></li>
+              <li><code>&lt;td&gt;</code></li>
+              <li><code>&lt;th&gt;</code></li>
+              <li><code>&lt;blockquote&gt;</code></li>
+              <li><code>&lt;q&gt;</code></li>
+              <li><code>&lt;code&gt;</code></li>
+              <li><code>&lt;meta&gt;</code></li>
+              <li><code>&lt;style&gt;</code></li>
+              <li><code>&lt;link&gt;</code></li>
+              <li><code>&lt;nav&gt;</code></li>
+              <li><code>&lt;pre&gt;</code></li>
+            </ul>
+              <p>If you are not sure about any of these tags, go to
+                <a href="http://www.w3schools.com/tags/default.asp">
+                  http://www.w3schools.com/tags/default.asp</a>
+              to find the tags and examples</p>
+              <hr>
+        </div>
+
+        <div class="block" id="CSS_BASICS">
+          <h4>CSS BASICS</h4>
+          <ul>
+            <li>for appearance, layout, presentation</li>
+            <li>can be written in HTML directly, but not recommended, use separate CSS
+               file and embedded in the head of an HTML page</li>
+            <li>work with rules and selectors (selector { property: value;})</li>
+            <li>a page can link to multiple CSS files, in case of conflict: latter > f
+              ormer; detail > general</li>
+            <li>comment: /*...*/</li>
+            <li>use class and id in html, make CSS easier to target</li>
+            <li>states and pseudo class (a:link { color: #FF0000; } /* unvisited link
+              */)</li>
+            <li>check use <a href="https://jigsaw.w3.org/css-validator/">W3C</a></li>
+          </ul>
+
+          <h5>CSS types and properties</h5>
+          <ul>
+            <li>color, three ways to define<ol>
+                  <li>conventional name:aqua, black, blue, fuchsia, gray, green, lime,
+                     maroon, navy, olive, purple, red, silver, teal, white</li>
+                  <li>RGB code: (0,0,0)~(255,255,255)</li>
+                  <li>hex code:	#000000~#FFFFFF</li>
+                </ol></li>
+            <li>font size, three ways to define<ol>
+                  <li>Unit: pixels (16px) vs. point (16pt) vs. m-size (1.16em) vs. root em (16rem)</li>
+                  <li>Vague font sizes: xx-small~;arger</li>
+                  <li>Percentage: 90%, 120%</li>
+                </ol></li>
+            <li>a lot about font (font-family, style, weight, align...)<p>we can apply
+               multiple fonts to the same text, they are priority ordered (the latter fo
+               nt would be used only if the former font is not found)</p></li>
+            <li>a lot about background (background-color, iamge, repeat...)</li>
+          </ul>
+          <hr>
+        </div>
+
+        <div class="block" id="GITHUB_BASICS">
+          <h4>GitHub</h4>
+          <ul>
+            <li>distributed version Control, waht does that mean?<img src="imgs/github_structure.png" alt="github structure" style="width:90%;height:90%;"></li>
+
+            <li>four stages: untracked, unmodified, modified, staged</li>
+
+            <li>fork/ remote repository
+              <p>When you <strong>fork</strong> a repository, you make your own
+                copy of other's repository to your own GitHub account. Any repos
+                itory that is not on your local computer is a
+                <strong>remote</strong> repository</p></li>
+
+            <li>clone
+              <p>When you <strong>clone</strong> a repository, you get a copy of
+                 repository from github to your <strong>local device</strong>.</p></li>
+
+            <li>branches
+              <p>When you create a <strong>branch</strong>, you copy the
+                repository in order to change some contents, by this way you do
+                not affect the master repository directly when doing any changes.</p>
+              <img src="imgs/branches.png" alt="github branch" style="width:90%;height:90%;"/></li>
+            <li>pull/push
+              <p>Basically, <strong>pull</strong> and <strong>push</strong>
+                request works just like commit and update, but it is used when
+                you want to finally change your remote repository since you have
+                 done on your local working copy</p></li>
+          </ul>
+        </div>
+      </div>
+  </section>
+
+  <section>
+        <div id="week2">
+          <h3>WEEK2: HTML5/CSS3, DOM, PAGE LAYOUT </h3>
+            <div class="block" id=HTML5/CSS3>
+              <h4>HTML5/CSS3</h4>
+            	<p>HTML5, some rules and new features</p>
+        				<ul>
+        					<li>semantic HTML: all tags should be meaningful, rather than just for styling.
+        					<p>e.g.: use <code>&lt;em&gt;</code> for bold because you want to
+        					<em>emphasize</em> rather than <code>&lt;b&gt;</code> which b stands for bold, there are a lot of new tags rather than div</p></li>
+        					<li>audio and video control
+        					<p>New feature in HTML5, look at this <a href="http://www.w3schools.com/html/html5_video.asp">
+        					link</a> to see how it works. It includes two sources (mp4,
+        					ogg) and an alt text, in case the web browser does not support the video </p></li>
+        					<li>canvas
+        					<p>New feature in HTML5, use to draw grphic by some script language such as JavaScript</p></li>
+        					<li>drag and drop</li>
+        					<li>web storage
+        					<p>website stores some data on client's computer, cookies, easy to use </p></li>
+        					<li>indexedDB
+        					<p>also used to store data, it has complicate asynchronous API and is better to deal with complex data</p></li>
+        					<li>server-sent events
+        					<p>not every browser supports, just use JavaScript</p></li>
+        					<li>geological API</li>
+        				</ul>
+      				<p>CSS3</p>
+      				<ul>
+      					<li>Used to need to write whole bunch of rules for different browsers, now just use the standard version</li>
+      					<li>viewport
+      					<p>visible area of the website through browser window, varies according to screen and devices, relate to responsive design</p></li>
+      					<li></li>
+      				</ul>
+              <hr>
+            </div>
+          <div class="block" id=DOM>
+            <h4>Document object model(DOM)</h4>
+            <hr>
+          </div>
+          <div class="block" id=PAGE_LAYOUT>
+            <h4>PAGE LAYOUT</h4>
+            <hr>
+          </div>
+        </div>
+  <section>
+
+    <footer>
+      <h4>footer</h4>
+      <section>
+      <p>Posted by: YUE LI (RIO)</p>
+      <p>Some notes are from my friend Ryan Yan</p>
+      <p>Contact information: <a href="mailto:lhzuigao@hotmail.com">
+        lhzuigao@hotmail.com</a></p>
+      <p>©2016 YUE LI ALL RIGHTS RESERVED</p>
+      </section>
+    </footer>
+</body>

@@ -1,0 +1,64 @@
+body {
+  padding:0px;
+  margin:0px;
+  color: black;
+  background: url(../imgs/banner1.jpg)no-repeat;
+}
+
+.banner {
+
+}
+
+nav {
+  height: 800px;
+
+}
+
+nav ul {
+  list-style-type: none;
+  /*set to transparent*/
+  text-align: right;
+  padding:0px 200px;
+}
+
+nav ul li {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  font-size:20px;
+}
+/*style on anchor of the nav bar*/
+
+nav p {
+  text-align: left;
+  padding: 20px 100px;
+  font-size: 32px;
+  font-family: 'Pacifico', cursive;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+section {
+  : 0px;
+}
+
+.content{
+  background: white;
+  color: black;
+  padding: 20px 200px 0px 200px;
+}
+
+.year {
+  padding: 0px 10px 0px 10px;
+}
+
+footer {
+  margin: 0px;
+  padding: 10px 0px 1px 0px;
+  background: #474e35;
+  color: white;
+  text-align: center;
+}
+
+footer a {
+  color: #bac3a7;
+}

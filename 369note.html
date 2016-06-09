@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+
+<head>
+  <meta charset="utf-8">
+  <title>YUE LI's personal website</title>
+  <meta name="author" content="YUE LI">
+  <meta name="description" content="YUE Li's personal website">
+  <meta name="Copyright" content="YUE LI">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+
+  <link rel="stylesheet" href="styles/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1><span class="mobile-word">Notes for CSC</span><span class="desktop-word">Yue's notes for CSC369: Operating System</span></h1>
+      <div id="navbar">
+		<ul class="main-nav">
+			<li><a href="http://www.lhzuigao.com">Home</a></li>
+			<li><a href="#">By Time</a>
+				<ul> <!--use different text on different device-->
+          <!--only first two weeks' links work, more would be added later-->
+					<li><a href="#week1"><span class="mobile-word">Week1</span>
+            <span class="desktop-word">Week1: Intro to OS, Processes, threads</span></a></li>
+					<li><a href="#week2"><span class="mobile-word">Week2</span>
+            <span class="desktop-word">Week2: System calls, intro to synchronization</span></a></li>
+					<li><a href="#week3"><span class="mobile-word">Week3</span>
+            <span class="desktop-word">Week3: Synchronization, intro to scheduling </span></a></li>
+					<li><a href="#week4"><span class="mobile-word">Week4</span>
+            <span class="desktop-word">Week4:</span></a></li>
+					<li><a href="#week5"><span class="mobile-word">Week5</span>
+            <span class="desktop-word">Week5:</span></a></li>
+					<li><a href="#week6"><span class="mobile-word">Week6</span>
+            <span class="desktop-word">Week6:</span></a></li>
+					<li><a href="#week7"><span class="mobile-word">Week7</span>
+            <span class="desktop-word">Week7:</span></a></li>
+					<li><a href="#week8"><span class="mobile-word">Week8</span>
+            <span class="desktop-word">Week8:</span></a></li>
+					<li><a href="#week9"><span class="mobile-word">Week9</span>
+            <span class="desktop-word">Week9:</span></a></li>
+					<li><a href="#week10"><span class="mobile-word">Week10</span>
+            <span class="desktop-word">Week10:</span></a></li>
+					<li><a href="#week11"><span class="mobile-word">Week11</span>
+            <span class="desktop-word">Week11:</span></a></li>
+					<li><a href="#week12"><span class="mobile-word">Week12</span>
+            <span class="desktop-word">Week12:</span></a></li>
+				</ul>
+			</li>
+			<li><a href="#">By Topic</a>
+				<ul>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+				</ul>
+			</li>
+    </ul>
+      </div>
+    </nav>
+  </header>
+
+
+  <section>
+    <div id="introduction">
+      <h3>Introduction</h3>
+      <p>
+         The course covers the operating system as a control program and
+         resource allocator; processes, threads, and concurrency; memory
+         management; file systems; and protection. It is one of the requirment
+         for all computer science specialists.
+      </p>
+    </div>
+  </section>
+
+
+    <div id="content">
+
+      <section id="week1">
+        <h3>WEEK1: Intro to OS, Processes, threads</h3>
+        <div class="block" id="os_intro">
+          <h4>Intro to OS</h4>
+          <ul>
+            <li>Regard OS as: abstraction provider, resource manager, program controller</li>
+            <li>Kernel mode: Core to operating system, had the permission to
+              access the OS. Normal prorgams are in user mode, which cannot access to the OS</li>
+            <li>About the storage: </li>
+            <li><img src="imgs/storage.png" alt="storage" style="width:50%;height:50%;"> </li>
+            <li>Concurrency: problem caused by multiple processes executes concurrently.</li>
+          </ul>
+          <hr>
+        </div>
+
+        <div class="block" id="process">
+          <h4>Processes and threads</h4>
+          <ul>
+            <li>Process: a prorgam in exexution, its like a container that
+              contains all <strong>execution states</strong> of program in execution, and
+              is named by the PID</li>
+            <li><img src="imgs/state_program.png" alt="programs state" style="width:50%;height:50%;"></li>
+            <li>Process Control Block(PCB): process's data structure, contains
+              all info about process, where OS keep all process' execution
+              state(see the picture) when process not running</li>
+            <li>Process state: ready/ blocked/ running</li>
+            <li><img src="imgs/state.png" alt="state" style="width:50%;height:50%;"></li>
+            <li>State queues: OS keep track of processes by a collection of queues, one queue for each state</li>
+            <li><img src="imgs/state_queue.png" alt="state queue" style="width:50%;height:50%;"></li>
+            <li>Context switch: switch the CPU to another process, save state of old process, load saved state for new process</li>
+            <li>Opreations on processes:
+              <ul>
+                <li>process creation: process created by another process, fork (review in CSC209)</li>
+                <li>process termination</li>
+              </ul>
+            </li>
+            <li>Parallel prorgams: create several processes that execute in parallel/ shared memoru for processes to share data, OS schedule these processes in parallel. parallel program is <strong>INEFFICIENT</strong></li>
+            <li>Parallel prorgams => cooperating processes share:<ul>
+              <li>same code and data</li>
+              <li>same privileges (what does that mean?)</li>
+              <li>same resources</li>
+            </ul>not share:<ul>
+              <li>execution states like PC SP registers</li>
+            </ul></li>
+          </ul>
+          <hr>
+        </div>
+
+        <div class="block" id="threads">
+          <h4>Intro to Threads</h4>
+          <ul>
+            <li>Thread: defines a sequential execution stream within a process (PC, SP, registers). Bound to a single process, but sinle process can have multiple threads. Processes are containers in which threads execute.</li>
+            <li>Thread interface(Pthread API)</li>
+            <li>Thread scheduling => scheduler determines when a thread runs. Uses queues to keep track of what threads are doing. Run queue/ ready queue</li>
+          </ul>
+          <hr>
+        </div>
+	</section>
+      <section id="week2">
+        <h3>WEEK1:</h3>
+        <div class="block" id="">
+          <h4></h4>
+          <ul>
+            <li></li>
+          </ul>
+          <hr>
+        </div>
+      </section>
+
+
+
+    <footer>
+      <h4>footer</h4>
+      <section>
+      <p>Posted by: YUE LI (RIO)</p>
+      <p>Some notes are from my friend Ryan Yan</p>
+      <p>Contact information: <a href="mailto:lhzuigao@hotmail.com">
+        lhzuigao@hotmail.com</a></p>
+      <p>©2016 YUE LI ALL RIGHTS RESERVED</p>
+      </section>
+    </footer>
+
+
+
+
+
+</body>
