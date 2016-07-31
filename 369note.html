@@ -8,8 +8,11 @@
   <meta name="Copyright" content="YUE LI">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
-
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/prism.css"/>
+
+  <script src="js/prism.js" type="text/javascript" async></script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -170,8 +173,33 @@
             <li><strong>THINKING:</strong> Use number 0, the philosopher doesn't want to eat.</li>
           </ol>
         <li>We want to give a mutual exclusion when philosopher want to take or put the forks, thus there is one semaphore for each philosopher </li>
-        <li>The algorithm works like this: run philosopher => try to <code>take_fork()</code>, set state to HUNGRY => use <code>test()</code> to check the availability of forks => if not availale be blocked at <code>down(&s[i])</code> / if available, set state to EATING, <code>up(&s[i])</code> would unblock the process if previously blocked by <code>down(&s[i]</code>).</li> 
+        <li>The algorithm works like this: run philosopher => try to <code>take_fork()</code>, set state to HUNGRY => use <code>test()</code> to check the availability of forks => if not availale be blocked at <code>down(&s[i])</code> / if available, set state to EATING, <code>up(&s[i])</code> would unblock the process if previously blocked by <code>down(&s[i]</code>).</li>
         <li> After <code>eat()</code>, we want to <code>put_forks()</code>, which change the state back to THINKING and <strong>try to activiate the neighbour who is previously being blocked because the forks are unavailable.</strong></li>
+      </ul>
+      <hr>
+    </div>
+
+	<div class="block" id="review_schedule">
+      <h4>Some review before scheduling</h4>
+      <ul>
+        <li>Process: program in execution, contains all state of program in execution, named by PID </li>
+        <li>State queues: one queue for each state, each PCB queued on a state queue according to current state, when PCB changes state, PCB unlinks from one queue and linked to another</li>
+        <li>Process scheduling: one process can run on each CPU and scheduler decides which one to run. There are two goals of scheduling:
+         <ol><li>max CPU utilization</li>
+         	<li>give illusion that processes runing concurrently.</li></ol>
+        <li>Process states: different event cause changes to a process state, which OS must record.</li>
+        <li>Context Switch: switch CPU to another process
+        	<ol>
+            	<li>Saved currently running process statement (don't want to lose any data)</li>
+                <li>Select next process from ready process</li>
+                <li>Restore state of next process
+                	<ul>
+                    	<li>Restore register</li>
+                        <li>Switch to user mode</li>
+                        <li>Set PC to next instruction in this process</li>
+                    </ul>
+                </li>
+        	</ol></li>
       </ul>
       <hr>
     </div>
@@ -179,27 +207,46 @@
     <div class="block" id="sheduling">
       <h4>Scheduling</h4>
       <ul>
-        <li></li>
-      </ul>
-      <hr>
-    </div>
+        <li>Process life cycle, alternately switch between computation(CPU-burst) and I/O(I/O burst)</li>
+        <li>CPU-bound: long CPU bursts, infrequent I/O burst</li>
+        <li>I/O bound: short CPU bursts, frequent(long) I/O bursts. During I/O bursts, CPU not needed => opportunity to execute another process</li>
+        <li><img src="imgs/week5/burst.png" alt="burst" style="width:100%;height:100%;"> a) CPU-bound process, b) I/O-bound process</li>
+        <li>Processor scheduling is the allocation of processors to processes over time. Key to multiprogramming. </li>
+        <li>Goals: fairness/ avoid starvation/ balance</li>
+        <li>Two types of scheduling:
+        	<ul>
+            	<li>non-preemptive: CPU keeps working on one process until it terminates.</li>
+                <li>preemptive: CPU can be taken from running process and allocated to another. Need in real-time systems.</li>
+            </ul>
+        </li>
 
-    <div class="block" id="dining_philo">
-      <h4></h4>
-      <ul>
-        <li></li>
-      </ul>
-      <hr>
-    </div>
+        <li>Scheduling algorithms: FCFS
+        	<ul>
+            	<li>content</li>
+                <li>Example</li>
+                <li>Problem</li>
+            </ul>
+        </li>
 
-    <div class="block" id="dining_philo">
-      <h4></h4>
-      <ul>
-        <li></li>
+        <li>Scheduling algorithms: SJF
+        	<ul>
+            	<li>content</li>
+                <li>Example</li>
+                <li>Problem</li>
+            </ul>
+        </li>
+
+        <li>Scheduling algorithms: RR
+        </li>
+
+        <li>Priority queue</li>
+        <li>Multi-level queue shceduling</li>
+        <li>Feedback scheduling</li>
+        <li>Linux 2.6 CPU scheduling</li>
       </ul>
-      <hr>
     </div>
-  </section>
+	</section>
+
 
   <section id="week5">
     <h3>WEEK5: Memory management</h3>
@@ -239,11 +286,39 @@
   </section>
 
   <section id="Assignment 1">
-    <h3>Assignment 1</h3>
+    <h3>Assignment 1: System Calls and Monitoring Processes</h3>
     <div class="block" id="">
-      <h4></h4>
+      <h4>Tips</h4>
       <ul>
-        <li></li>
+        <li>I am mainly going to talk about my <strong>own</strong> feeling about the assignment, including what I think might be hard or easy, and some useful tips (maybe?)</li>
+        <li>Find all official introduction and start code <a href="http://www.cdf.toronto.edu/~csc369h/summer/assignments/a1/a1.html">HERE</a>. Pls read <strong>several times</strong> with a very careful manner. You are fine if you can <strong>repeat all important instructions without looking at the original web page</strong>. Compare to other courses, CSC369 has a fairly long description telling you a lot about details. They are all important for writing the actual code.</li>
+        <li>Understand all start code</li>
+        <li>In general, you need to fill in X functions
+        	<ul>
+            	<li><code>interceptor</code> => Used to <strong>log</strong> message to all <strong>monitored</strong> function call, so we firstly make a check, and it the function is monitored, we write a function to log the message. </li>
+                <li><code>my_syscall</code> => Core of the whole assignment. The goal is to implement 4 commands.
+                	<ul>
+                    	<li><code>REQUEST_SYSCALL_INTERCEPT</code></li>
+                        <li><code>REQUEST_SYSCALL_RELEASE</code></li>
+                        <li><code>REQUEST_START_MONITORING</code></li>
+                        <li><code>REQUEST_STOP_MONITORING</code></li>
+                    </ul> 
+                    There are mainly two parts for this function, first is the error checking since there might be all different kinds of errors like syscall not valid, caller does not have right permissions, etc. We need to make sure there is no error before executing the four commands. The actual functionality part is not hard, since start code has already given most functins, we just need to combine them for our purpose. </li>
+                    
+            	<li><code>my_exit_group(int status)</code> => This function is used to replace original exit_group function. <a href="http://www.tutorialspoint.com/unix_system_calls/exit_group.htm">Exit group</a> works to terminate the current thread group. In our case,<strong> when a process exit, we want to remove its pid from all monitoring lists</strong>, so we have to explicitly write some code with give functions to achieve this goal. </li>
+
+                <li><code>init_function</code> => Used for module initialization. By saying initialization we want to replace all system calls we want to hijack from the original system call table to our own. Of course we want to <strong>save a copy of the original system call</strong> so that we could resume it when we want to exit. Moreover we should change set system call table writable.</li>
+                <li><code>exit_function</code> => Used for module exit. When exit we want to restore all of the original system call. Moreover we should set the system call table back to read only.</li>
+            </ul>
+        </li>
+        <li>Pro tips:
+        	<ul>
+            	<li>Synchronization: </li>
+                <li>struct pt_regs reg</li>
+                <li></li>
+            </ul>
+        </li>
+        <li>Test on virtual machine, might be tricky</li>
       </ul>
       <hr>
     </div>

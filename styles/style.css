@@ -79,7 +79,6 @@ nav li:hover li a:hover { background: white; }
 .main-navigation li ul li { border-top: 0; }
 
 section ul li {
-  list-style: none;
   padding-top:3px;
   padding-bottom:3px;
 }
@@ -88,6 +87,34 @@ section ul li ul li {
   list-style: circle;
   padding-top:1px;
   padding-bottom:1px;
+}
+
+/*code section*/
+code {
+  color: #f8f8f2;
+	background: #272822;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+  /*==*/
+  padding: 0.2em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.5em;
 }
 
 /*Responsive media-queries*/

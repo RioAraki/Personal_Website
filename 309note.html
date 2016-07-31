@@ -8,8 +8,11 @@
   <meta name="Copyright" content="YUE LI">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
-
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/prism.css"/>
+
+  <script src="js/prism.js" type="text/javascript" async></script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -99,7 +102,7 @@
             <h5>Concepts</h5>
             <ul>
               <li>block element/ inline element (p,h/em)</li>
-              <li>element's attribute <code> &lt;title="About W3Schools"&gt;&lt;/p&gt;</code> </li>
+              <li>element's attribute <code> &lt;title="About W3Schools"&gt;&lt;/p&gt;</code></li>
               <li>HTML5 standard for this course</li>
               <li>write in a semantic way</li>
               <li>use <a href="https://validator.w3.org/">W3C validator</a>
@@ -318,11 +321,11 @@
         <h4>JSON(JavaScript Object Notation)</h4>
             <ul>
             <li>language-independent convention for formatting data as a set of JS obejcts</li>
-            <li>eg: <code><pre>{"employees":[
+            <li>eg: <pre><code>{"employees":[
     {"firstName":"John", "lastName":"Doe"},
     {"firstName":"Anna", "lastName":"Smith"},
     {"firstName":"Peter", "lastName":"Jones"}
-]}</pre></code></li>
+]}</code></pre></li>
             <li>Compare JSON to XML:
                 <ul>
                     <li>Both supported by $.ajax()</li>
@@ -333,6 +336,126 @@
                 </ul></li>
             </ul>
     </div>
+    </section>
+
+    <section id="week6">
+      <h3>WEEK6: REST API; Database; ER-db-design</h3>
+
+      <div class="block" id="rest_api">
+        <h4>Rest APIs</h4>
+        <ul>
+          <li>URI(uniform resource identifier) => URL(universal resource locator), identifier for the location of document served by a web server</li>
+          <li>REST(Representational State Transfer): architectural style for using HTTP to provide resources over the web. REST api works pretty much the same way website does. Call from client to server => get data back over the HTTP protocol. 
+            <ul>
+              <li>uniquely access resources through URLs</li>
+              <li>use GET, POST, PUT and DELETE
+              	<ul>
+                	<li>GET: reads specific resource or collection of resource(by identifier)</li>
+                    <li>PUT: updates/ replaces a specific resource. Create if not exists</li>
+                    <li>DELETE: remove a specific resource</li>
+                    <li>POST: Creates a new resource. Use Post, not GET to make a change</li>
+                </ul>
+              </li>
+              <li>use standard data format, HTML, XML, JSON</li>
+              <li>stateless protocol</li>
+            </ul>
+          </li>
+          <li>个人理解，REST API 是与网站做交互的另一种形式，使用REST API的methods比如GET/ PUT/ DELETE/ POST 可以直接访问网站数据，并达到发推，得知谷歌地图中特定位置的经纬的效果。REST 只是一种设计风格，而不是标准。 这种风格的特点为：
+          	<ul>
+            	<li>直观简短的资源地址：URI，比如：http://example.com/resources/。</li>
+                <li>传输的资源：Web服务接受与返回的互联网媒体类型，比如：JSON，XML，YAML等。</li>
+                <li>对资源的操作：Web服务在该资源上所支持的一系列请求方法（比如：POST，GET，PUT或DELETE）。</li
+            ></ul>
+          </li>
+        </ul>
+        <hr>
+      </div>
+
+      <div class="block" id="database">
+        <h4>Database</h4>
+        <ul>
+          <li>RDBMS: Relational Database Management System => persist data storage of large dataset s using a<strong> relationa</strong>l model. <br>Relational => collection of table consists rows(for record) and columns(for attribute). </li>
+          <li>Data can be in relation of many-to-many and many-to-one</li>
+          <li>Pros of using RDBMS:
+          	<ul>
+            	<li>Data safety: immune to program crashes</li>
+                <li>Concurrent access: atomic access and updates</li>
+                <li>Data integrity</li>
+                <li>Fault tolerance</li>
+                <li>Scalability: handle large/ small quantities of data n a uniform manner</li>
+                <li>Reporting: write <strong>SQL</strong> to generate reports</li>
+            </ul>
+          </li>
+          <li>More about SQL: clause/ expressions/ predicates/ queries/ statements
+          	<br><img src="imgs\309week6\1.png" alt="SQL elements" width="90%" height:"90%"></li>
+          <li>Data type: 
+          	<ul>
+            	<li>document type => MongoDB</li>
+                <li>graph (in algorithm meaning) type => store info about networks, such as social connection and roadmaps</li>
+                <li>key-value type => every single item in DB stored as an attribute name( or "key") together with its value</li>
+                <li>column type => optimized for queries over large datasets and store columns of data together(?)</li>
+            </ul>
+           </li>
+        </ul>
+        <li>Relational databases require that schemas be defined before you can add data (?)</li>
+        <li>Relational databases usually scale vertically: a single server has to host the entire database to ensure reliability and continuous availability of data.</li>        
+        <hr>
+      </div>
+      
+      <div class="block" id="entity_relationship_model">
+          <h4>Entity Relationship Model</h4>
+          <ul>
+            <li>Modeling: about mapping entities and relationships from the world into a database
+            	<br> Some concepts:
+                	<ul>
+                    	<li>Entity: principal data object in DB. Entity set: class of objects that have properties in common.</li>
+                        <li>Relationship: association between one or more entities. Cardinality => degree of a relationship</li>
+                        <li>Attributes/ Composite attribute: desribe elementary properties of entities or relationships. Composite attribute: grouped attributes of the same entity or relationship have closely connected meaning or uses.</li>
+                        <li><img src="imgs\309week6\4.png" alt="SQL elements" width="90%" height:"90%"></li>
+                        <li>Cardinalities: Strength of connectivity, each entity set articipates in a relationship with a min and maxcardinality. <br>Min cardinality = 0 means the entity participation is <strong>optional</strong>/ = 1 means participation is <strong>mandatory</strong>. <br>Max cardinality = 1 means a 1-to-1 relationship/ = N means 1 instance of entity is associated with many instances of relationship.<img src="imgs\309week6\5.png" alt="SQL elements" width="90%" height:"90%"> Attribute's cardinality:<img src="imgs\309week6\6.png" alt="SQL elements" width="90%" height:"90%">  </li>
+                        <li>Keys:  minimal sets of attributes which <strong>uniquely identify</strong> instances of an entity set. </li>
+                        <li>In constrast, a weak entity: cannot identified by attribute alone, rely on others. </li>
+                    </ul>
+           <li>Types of models</li>
+            	<ul>
+                	<li>relational model: Use relations to represent the entities and relationships<br><img src="imgs\309week6\2.png" alt="SQL elements" width="90%" height:"90%"></li>
+                    <li>visual data model: illustrates entities and relationships, as well as the attributes that describe them.<br><img src="imgs\309week6\3.png" alt="SQL elements" width="90%" height:"90%"></li>
+                </ul>
+            </li>
+          </ul>
+          <hr>
+        </div>
+
+      <div class="block" id="ds-design">
+        <h4>Database schema design</h4>
+        <ul>
+        	<li><img src="imgs\309week6\7.png" alt="SQL elements" width="90%" height:"90%"></li>
+          <li>Real World => The conceptual schema(E/R) => generate logical(relational) schema<br>
+              The translation: conceptual cschema -> logical model is not simple because<strong> not all of the constructs of ER model can be translated into relational model.</strong> Also the schema must be restructured.<br>
+             The translation can be done in two steps:
+             <ol>
+               <li>Restruct of entity-relationship schema <strong>based on criteria for optimizing</strong>(?)<br>
+               *consider redundancy, generalization, entities and relations, limit weak entity sets, primary keys.
+                <ul>
+                  <li>redundancy: repeated info or design => waste space, inconsistency, indicates design flaw. Decide to keep or eliminate based on the cost</li>
+                  <li><img src="imgs\309week6\8.png" alt="SQL elements" width="90%" height:"90%"></li>
+                  <li>Every relation <strong>must have a unique primary key</strong> and we tend to use weak entity sets (those without an internal primary key) when <strong>there’s no global authority</strong> that can create ID’s.<br>	§ E.g., It’s unlikely that teams would agree to assign unique player #’s across all teams in the world</li>
+                </ul>
+               </li>
+               
+               <li>Translation into logical model <strong>based on the features of logical model.</strong>
+               	<ul>
+                	<li>example of many-to-many:<img src="imgs\309week6\9.png" alt="SQL elements" width="90%" height:"90%"></li>
+                    <li>example of ternary:<img src="imgs\309week6\10.png" alt="SQL elements" width="90%" height:"90%"></li>
+                    <li>example of one-to-many (one player sign contract to many teams): <img src="imgs\309week6\11.png" alt="SQL elements" width="90%" height:"90%"></li>
+                    <li>example of one-to-one/ optional one-to-one: <img src="imgs\309week6\12.png" alt="SQL elements" width="90%" height:"90%"></li>
+                    <li>example of optional one-to-one: <img src="imgs\309week6\13.png" alt="SQL elements" width="90%" height:"90%"></li>
+               	</ul>
+               </li>
+             </ol>
+          </li>
+        </ul>
+      </div>
 
     </section>
 
