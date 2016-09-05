@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript and jQuery practices</title>
+<meta name="author" content="YUE LI">
+<meta name="description" content="YUE Li's personal website">
+<meta name="Copyright" content="YUE LI">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<script src="js/JSpractice.js" type="text/javascript" async></script>
+<script src="js/jquery-3.1.0.min.js" async></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>Note at beginning</h1>
+<div>
+  <h4>== vs ===</h4>
+  <p> ==: abstract equality comparison operator<br>
+      ===: strict equality comparison operator<br>
+      == 比较value，===先比较type再比较value</p>
+  <a href="https://appendto.com/2016/02/vs-javascript-abstract-vs-strict-equality/">
+    This link perfectly explains the difference</a>
+
+  <h4>JavaScript Data Types</h4>
+  <p>strings/ numbers/ booleans/ arrays (arrays are objects)/ objects/ undefined/ empty value (string)/ null (object)/ </p>
+  <p>When adding a number and a string, JavaScript will treat the number as a string.</p>
+  <code>var x = 16 + "Volvo"; // output: 16Volvo<br>
+  var x = 16 + 4 + "Volvo"; // 20Volvo<br>
+  var x = "Volvo" + 16 + 4; // Volvo164</code>
+
+  <h4>JavaScript Prototype</h4>
+
+</div>
+
+  <h1>JavaScript Basic practices</h1>
+<div>
+  <h3>Practice 1: show time</h3>
+  <div id="practice1"></div>
+</div>
+
+<div>
+  <h3>Practice 2: print page</h3>
+  <p>Print the current page with js function, press the button</p>
+  <button onclick="print_current_page()">Print this page</button>
+  <div id="practice2"></div>
+</div>
+
+<div>
+  <h3>Practice 3: Get the current date</h3>
+  <p>Done this in practice 1 already</p>
+</div>
+
+<div>
+  <h3>Practice 4: Write a JavaScript program to find the area of a triangle
+    where lengths of the three of its sides are 5, 6, 7.</h3>
+    <p>Input the triangles sides</p>
+    <form>
+      Side 1: <input type = number id = "side1"></input><br>
+      Side 2: <input type = number id = "side2"></input><br>
+      Side 3: <input type = number id = "side3"></input><br>
+    </form>
+    <br>
+    <button onclick="cal_area()">Calculate the area</button>
+  <div id="practice4"></div>
+</div>
+
+<div>
+  <h3>Practice 5: Reverse a string periodically [Still have some questions]</h3>
+  <div><p id="practice5">string_to_reverse_</p></div>
+  <button onclick="reverse_string()">reverse string</button>
+</div>
+
+<div>
+  <h3>Practice 6: Determine whether a given year is a leap year in the Gregorian calendar</h3>
+  <p>Input the year:</p>
+  <form>
+    Year: <input type = number id = "year"></input><br>
+  </form>
+  <br>
+  <button onclick="cal_year()">Confirm</button>
+  <br>
+  <div id = 'practice6'></div>
+</div>
+
+<div>
+  <h3>Practice 7: Write a JavaScript program to find 1st January is being a Sunday between 2014 and 2050.
+</h3>
+  <button onclick="find_sunday()">Find</button>
+  <div id='practice7'></div>
+</div>
+
+<div>
+  <h3>Practice 9: Write a JavaScript program to calculate days left until next Christmas. (8 skipped)</h3>
+  <button onclick="xms_left()">Find</button>
+  <div id='practice9'></div>
+</div>
+
+<div>
+  <h3>Practice 12: Write a JavaScript program to get the website URL (10 11 skipped)</h3>
+  <button onclick="find_url()">Find</button>
+  <div id='practice12'></div>
+</div>
+
+<h1>JavaScript functions practice</h1>
+
+<div>
+  <h3>Practice 1: reverse a number</h3>
+  <p>Use 'split', but have to split a string, number + "" makes number a string</p>
+  <p>Use 'join', put the splited things together </p>
+  <p>Use 'reverse', reverse all items in an array </p>
+  <form>
+    Number: <input type = number id = "r_number"></input><br>
+  </form>
+  <button onclick="reverse_number()">Reverse</button>
+  <div id='f_practice1'></div>
+</div>
+
+<div>
+  <h3>Practice 2: Check palindrome</h3>
+  <p>Use 'toLowerCase', 'replace' but have to split a string, number + "" makes number a string</p>
+  <p>Use 'join', put the splited things together </p>
+  <p>Use 'reverse', reverse all items in an array </p>
+  <form>
+    Number: <input id = "palindrome"></input><br>
+  </form>
+  <button onclick="check_palindrome()">check</button>
+  <div id='f_practice2'></div>
+</div>
+
+<div>
+  <h3>Practice 3: Write a JavaScript function that generates all combinations of a string</h3>
+  <p>'Slice' would slice the string into portion according to index parameter.</p>
+  <form>
+    String: <input id = "combination"></input><br>
+  </form>
+  <button onclick="string_combination()">find</button>
+  <div id='f_practice3'></div>
+</div>
+
+<div>
+  <h3>Practice 4: Write a JavaScript function that returns a passed string with letters in alphabetical order</h3>
+  <p>'Slice' would slice the string into portion according to index parameter.</p>
+  <form>
+    String: <input id = "sort_string"></input><br>
+  </form>
+  <button onclick="string_sorted()">find</button>
+  <div id='f_practice4'></div>
+</div>
+
+<div>
+  <h3>Practice 5: Converts the first letter of each word of a string in upper case.</h3>
+  <form>
+    String: <input id = "upper_first"></input><br>
+  </form>
+  <button onclick="convert_upper_case()">find</button>
+  <div id='f_practice5'></div>
+</div>
+
+<div>
+  <h3>Practice 6: Write a JavaScript function which accepts an argument and returns the type.</h3>
+  <form>
+    Any Type: <input id = "type"></input><br>
+  </form>
+  <button onclick="find_type()">find</button>
+  <div id='f_practice6'></div>
+</div>
+
+<h1>JavaScript recursion practice</h1>
+
+<div>
+  <h3>Practice 1: Write a JavaScript program to calculate the factorial of a number.</h3>
+  <form>
+    Number Input: <input type = number id = "factorial"></input><br>
+  </form>
+  <button onclick="cal_factorial()">calculate</button>
+  <div id='r_practice1'></div>
+</div>
+
+<div>
+  <h3>Practice 2: Write a JavaScript program to calculate the gcb of a number.</h3>
+  <form>
+    Number Input 1: <input type = number id = "gcb1"></input><br>
+    Number Input 2: <input type = number id = "gcb2"></input><br>
+  </form>
+  <button onclick="cal_gcb()">calculate</button>
+  <div id='r_practice2'></div>
+</div>
+
+<div>
+  <h3>Practice 3: Write a JavaScript program to get the first n Fibonacci numbers.</h3>
+  <form>
+    Numbers: <input type = number id = "counter"></input><br>
+  </form>
+  <button onclick="count_fib()">count</button>
+  <button onclick='clear_fib()'>clear</button>
+  <div id='r_practice3'></div>
+</div>
+
+
+
+</body>
+
+<html>

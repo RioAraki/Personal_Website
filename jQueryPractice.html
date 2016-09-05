@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery practice</title>
+<meta name="author" content="YUE LI">
+<meta name="description" content="YUE Li's personal website">
+<meta name="Copyright" content="YUE LI">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<link rel="stylesheet" href="styles/jQueryStyle.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/jqueryPractice.js" async></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+
+<body>
+<h1>jQuery Practical exercises</h1>
+
+<div>
+  <h2>Notes at beginning</h2>
+  <h3>why jQuery</h3>
+    jQuery takes a lot of common tasks that require many lines of JavaScript
+     code to accomplish, and wraps them into methods that you can call with a
+      single line of code.
+  <h3>basic syntax</h3>
+  <p>$(selector).action()</p>
+  <p>the $ in the code is just a shorter, more convenient name for the
+    jQuery function; When you call the $() function and pass a selector to it,
+    you create a new jQuery object.</p>
+  <p>We're using $(document) to create a jQuery object from our page's document,
+     and then calling the .ready() function on that object, passing it the
+     function we want to execute. Since this is something you'll find yourself
+     doing a lot, there's a shorthand method for this if you prefer — the $()
+      function does double duty as an alias for $(document).ready()</p>
+  <p>It's important to understand that any selection you make will only contain
+    elements that existed in the page when you made the selection. That is, if
+    you write var anchors = $( 'a' ); and then add another <a> element to your
+    page later, then your anchors variable will not contain that new element.</p>
+  <p>Getters and setters: getter -> retrieve a piece of info from the selection (
+     in most cases, getters only works on the first element in a selection.),
+     setter alter the selection (mostly, all elements in selection) in some way.</p>
+  <p>explicit iteration: .each()</p>
+  <pre>$( 'li' ).each(function( index, elem ) {
+  // this: the current, raw DOM element
+  // index: the current element's index in the selection
+  // elem: the current, raw DOM element (same as this)
+  $( elem ).prepend( '<b>' + index + ': </b>' );
+});</pre>
+  <p>Chaining: we can call a series of methods on a selection without having
+     to repeat the selection or store the selection in a variable.</p>
+  <h3>regular expression</h3>
+  <p>RegExp object</p>
+  <p>Simple pattern: e.g. /abc/ => contain exact substring abc,
+    "The latest airplane designs evolved from slabcraft."</p>
+  <p>Special characters:/ab*c/ => a single 'a' is followed by zero or more 'b's
+     (* means 0 or more occurrences of the preceding item) and then immediately
+      followed by 'c'.</p>
+  <p>Special character list: \^$*+?.(x)</p>
+  <p>\: \b => word boundary. /\bm/ matches the 'm' in "moon" ;<br>/oo\b/ does not match
+     the 'oo' in "moon", because 'oo' is followed by 'n' which is a word character;<br>
+     /a\*/ removes the specialness of the '*' to enable matches with strings like 'a*'.
+  </p>
+  <p>^: Matches beginning of input.For example, /^A/ does not match the 'A' in "
+    an A", but does match the 'A' in "An E".<br>
+    [^xyz]: A negated or complemented character set. That is, it matches anything
+     that is not enclosed in the brackets.</p>
+  <p>$: Matches end of the input.</p>
+  <p>*: Matches the preceding expression 0 or more times.</p>
+  <p>+: Matches the preceding expression 1 or more times.</p>
+  <p>?: Matches the preceding expression 0 or 1 time.<br>
+    Applying /\d+/ to "123abc" matches "123". But applying /\d+?/ to that same string matches only the "1".
+</p>
+  <p>.: Matches any single character except the newline character.</p>
+  <p>to be continued</p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+
+</div>
+
+<div>
+  <h3>Practice1:Scroll to the top of the page</h3>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+  <p>jQuery</p>
+
+  <a href='#top'>Go top</a>
+</div>
+
+<div>
+  <h3>Disable right click menu in html page</h3>
+  <p>The right click menu would be disabled on the click here text, and it works
+    fine if you click outside.</p>
+  <p id = 'disable_menu'>Click here</p>
+</div>
+
+<div>
+  <h3>Fix broken image</h3>
+  <p>Normal picture</p>
+  <img src="imgs/jquery_practice/Olympic_Rings.jpg"
+   alt='Olympic rings' width="50%" height="50%"></img>
+  <p>Broken picture</p>
+  <img src="imgs/jquery_practice/Olympic_Rings"
+   alt='Olympic rings' width="50%" height="50%"></img>
+  <p>Fixed with jQuery so you cannot see the broken image</p>
+  <img src="imgs/jquery_practice/Olympic_Rings"
+   alt='Olympic rings' width="50%" height="50%" id="broken_fix"></img>
+</div>
+
+<div>
+  <h3>Blink text using jQuery</h3>
+  <p class="blink">The text would blink</p>
+</div>
+
+<div>
+  <h3>Limit character input in the textarea including count</h3>
+  <form>
+  <label>Maximum 12 characters</label>
+  <textarea id='textarea' maxlength="12"></textarea>
+  <p><span id='rchars'>12</span> Characters remaining</p>
+  <form>
+</div>
+
+<div>
+  <h3>Make first word bold of all elements</h3>
+  <p>/(^\w+)/, => ^ beginning, \w+ => words until a blank</p>
+  <p class='bold'>The first example</p>
+  <p class='bold'>Second line</p>
+  <p class='bold'>Final line</p>
+</div>
+
+<div>
+  <h3></h3>
+  <p></p>
+</div>
+
+</body>
+</html>
