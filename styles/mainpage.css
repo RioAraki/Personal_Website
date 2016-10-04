@@ -4,10 +4,10 @@
 }
 
 body {
-  padding: 10px 20px 0 20px;
+  padding: 0 20px 0 20px;
   font-family: Arial, sans-serif;
   /*image location*/
-  background: url(../imgs/banner1.jpg);
+  background: url(https://source.unsplash.com/random/1920x1080);
   /*background centered vertically and horizontally at all times*/
   background-position: center center;
   /*does not repeat*/
@@ -46,6 +46,9 @@ nav {
 .cl-effect-1 a {
     text-decoration: none;
     color: black;
+    /*background: rgba(255, 255, 255, 1);*/
+    border-radius: 15px;
+    /*box-shadow: 0 0 5px 5px rgb(255, 255, 255);*/
 }
 
 .cl-effect-1 a::before,
