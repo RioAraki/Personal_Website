@@ -110,6 +110,11 @@ h4 {
   font-weight: lighter;
 }
 
+.intro {
+  font-size: 26px;
+  font-weight: lighter;
+}
+
 .second {
   text-indent: 2em;
 }
@@ -122,7 +127,7 @@ h4 {
 }
 
 .content ul{
-  list-style-type: none;
+  list-style-type: hiragana;
 }
 
 .content ul li{
