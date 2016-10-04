@@ -27,16 +27,15 @@ body {
 nav ul {
   list-style-type: none;
   text-align: center;
-
 }
 
 nav ul li {
   position: relative;
   display: inline-block;
-  padding: 15px;
+  padding: 10px;
   font-size:28px;
   font-family: 'Abril Fatface', cursive;
-
+  /*background: rgba(255, 255, 255, 0.5);*/
 }
 /*style on anchor of the nav bar*/
 nav {
@@ -46,9 +45,9 @@ nav {
 .cl-effect-1 a {
     text-decoration: none;
     color: black;
-    /*background: rgba(255, 255, 255, 1);*/
-    border-radius: 15px;
-    /*box-shadow: 0 0 5px 5px rgb(255, 255, 255);*/
+    background: rgba(200, 255, 255, 0.4);
+    border-radius: 10px;
+    box-shadow: 0 0 5px 5px rgba(200, 255, 255, 0.4);
 }
 
 .cl-effect-1 a::before,
