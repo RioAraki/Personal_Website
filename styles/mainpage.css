@@ -45,9 +45,13 @@ nav {
 .cl-effect-1 a {
     text-decoration: none;
     color: black;
-    background: rgba(200, 255, 255, 0.4);
-    border-radius: 10px;
-    box-shadow: 0 0 5px 5px rgba(200, 255, 255, 0.4);
+    /*background: rgba(200, 255, 255, 0.4);*/
+    /*border-radius: 10px;*/
+    /*box-shadow: 0 0 5px 5px rgba(200, 255, 255, 0.4);*/
+    text-shadow: 10px 0 0 white, 0 10px 0 white,
+    0 -10px 0 white, -10px 0 0 white,
+    10px 0 10px white, 0 10px 10px white,
+    0 -10px 10px white, -10px 0 10px white;
 }
 
 .cl-effect-1 a::before,
@@ -60,7 +64,7 @@ nav {
 }
 
 .cl-effect-1 a::before {
-	margin-right: 10px;
+	margin-right: 5px;
 	content: '{';
 	-webkit-transform: translateX(20px);
 	-moz-transform: translateX(20px);
@@ -68,7 +72,7 @@ nav {
 }
 
 .cl-effect-1 a::after {
-	margin-left: 10px;
+	margin-left: 5px;
 	content: '}';
 	-webkit-transform: translateX(-20px);
 	-moz-transform: translateX(-20px);
@@ -110,7 +114,8 @@ h4 {
 }
 
 .intro {
-  font-size: 26px;
+  font-size: 22px;
+  padding: 5px 0 10px 0;
   font-weight: lighter;
 }
 
@@ -121,7 +126,7 @@ h4 {
 .content{
   background:rgba(0, 0, 0, 0.6);
   color: white;
-  padding: 10px 100px 10px 100px;
+  padding: 5px 50px 5px 50px;
   margin: 0px;
 }
 
